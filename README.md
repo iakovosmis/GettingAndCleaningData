@@ -1,5 +1,8 @@
-Instructions for how run_analysis script works:
+Important Notice:
+Script will work correctly only if the samsung data give with the project are in the same folder with the script.Also dplyr package must be installed in order the script to work.
 
+Instructions for how run_analysis script works:
+ 
 1)Reads the data from X_test.txt from test folder.
 
 2)Reads subject data from test folder.

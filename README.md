@@ -1,5 +1,5 @@
 Important Notice:
-Script will work correctly only if the samsung data give with the project are in the same folder with the script.Also dplyr package must be installed in order the script to work.
+Script will work correctly only if the samsung data given with the project are in the same folder with the script.Also dplyr package must be installed in order the script to work.
 
 Instructions for how run_analysis script works:
  

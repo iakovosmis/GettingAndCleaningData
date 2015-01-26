@@ -1,4 +1,4 @@
-function analysis(){
+function(){
         testX<-read.table("./test/X_test.txt",header = FALSE) ## read the data from X_test.txt from test folder
         subjectTest<-read.table("./test/subject_test.txt",header=FALSE) ## read subject data from test folder
         testX<-cbind(testX,subjectTest) ## add data read from subject_test.txt to data read from X_test.txt 
@@ -16,6 +16,7 @@ function analysis(){
         mergedDataset<-mergedDataset[,grep(".*mean().*|.*std().*|.*Subject.*|.*Activity.*",names(mergedDataset))] ## Extract only the measurements on the mean and standard deviation(plus Subject and Activity columns) for each measurement using regular expression with grep 
         activitiesNames<-read.table("activity_labels.txt",header = FALSE) ##read the activity labels from the file
         mergedDataset<-merge(mergedDataset,activitiesNames,by.x="Activity",by.y="V1",all=TRUE) ## merge the activity labels with dataset
-        finalDataSet<-summarise_each(group_by(mergedDataset,Subject,Activity),funs(mean))) ##final dataset with average of each measurement grouped by subject and activity
-        write.table(finalDataSet,"tinyDataSet.txt",row.names=FALSE) ##export final dataset to txt file.
+        finalDataSet<-summarise_each(group_by(mergedDataset,Subject,Activity),funs(mean)) ##final dataset with average of each measurement grouped by subject and activity
+        file<- write.table(finalDataSet,"./tinyDataSet.txt",row.names=FALSE) ##export final dataset to txt file.
+        
 }
